@@ -43,14 +43,24 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import{MatNativeDateModule} from '@angular/material/core';
 import{MatBadgeModule} from '@angular/material/badge';
-
+//form
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //bootstarp
 import { CommonModule } from "@angular/common";
 import{BsDropdownModule} from "ngx-bootstrap/dropdown";
 import{TooltipModule} from "ngx-bootstrap/tooltip";
 import{ModalModule} from "ngx-bootstrap/modal";
 import {CollapseModule} from "ngx-bootstrap/collapse";
-
+//fire 
+import{AngularFireModule} from '@angular/fire/compat';
+const firebaseConfig = {
+  apiKey: "AIzaSyAbpmIx-u6CvplfKq2MBcSFtBMMpQGLz-c",
+  authDomain: "user-management-system-5fea7.firebaseapp.com",
+  projectId: "user-management-system-5fea7",
+  storageBucket: "user-management-system-5fea7.appspot.com",
+  messagingSenderId: "325982109814",
+  appId: "1:325982109814:web:dcd40bc0b916777e631f57"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,7 +112,10 @@ import {CollapseModule} from "ngx-bootstrap/collapse";
     BsDropdownModule,
     TooltipModule,
     ModalModule,
-    CollapseModule
+    CollapseModule,
+    AngularFireModule.initializeApp(firebaseConfig)
+    ,FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
