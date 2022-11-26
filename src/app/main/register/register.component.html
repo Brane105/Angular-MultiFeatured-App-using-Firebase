@@ -1,1 +1,23 @@
-<p>register works!</p>
+<div class="registertitle">
+    <h4>Welcome to Angular Practise Registration</h4>
+</div>
+<div class="register-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>please sign Up </mat-card-title>
+      </mat-card-header><br>
+        <form class="example-form" [formGroup] = "registerForm" (ngSubmit) = "handleRegister()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName = "email" type = "email" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="registerForm.controls['email'].pristine || registerForm.controls['email'].valid" style="color: red;">User Email Required</span>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName = "password" type = "password" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="registerForm.controls['password'].pristine || registerForm.controls['password'].valid" style="color: red;">password Required</span>
+        </mat-card-content>
+        <button mat-raised-button color="accent" class="btn-block">SignUp</button>
+      </form>
+</mat-card>
+</div>

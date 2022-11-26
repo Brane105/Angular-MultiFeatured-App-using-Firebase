@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="logintitle">
+    <h4>Welcome to Angular Practise</h4>
+</div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>please sign in </mat-card-title>
+      </mat-card-header><br>
+        <form class="example-form" [formGroup] = "loginForm" (ngSubmit) = "handleSubmit()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName = "email" type = "email" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="loginForm.controls['email'].pristine || loginForm.controls['email'].valid" style="color: red;">User Email Required</span>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName = "password" type = "password" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="loginForm.controls['password'].pristine || loginForm.controls['password'].valid" style="color: red;">password Required</span>
+        </mat-card-content>
+        <button mat-raised-button color="accent" class="btn-block">Log in</button>
+      </form>
+</mat-card>
+</div>
