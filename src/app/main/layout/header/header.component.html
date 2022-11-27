@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="app-header" >
-    <div><a routerLink="/home" class="title">Angular Practise  </a></div>
+    <div><a routerLink="/home" class="title" [ngClass]="{'isDisabled':value == undefined}">Angular Practise </a></div>
     <span class="nav-tool-items">
       <a mat-button routerLink="login" routerLinkActive="active" *ngIf="value == undefined">Log in</a>
       <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active" *ngIf="value == undefined">Register</a>

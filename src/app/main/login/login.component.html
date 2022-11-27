@@ -1,10 +1,10 @@
 <div class="logintitle">
-    <h4>Welcome to Angular Practise</h4>
+    <h3>Welcome to Angular Practise</h3>
 </div>
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>please sign in </mat-card-title>
+        <mat-card-title class="title">Login </mat-card-title>
       </mat-card-header><br>
         <form class="example-form" [formGroup] = "loginForm" (ngSubmit) = "handleSubmit()">
         <mat-card-content>
@@ -17,7 +17,9 @@
           </mat-form-field>
           <span [hidden]="loginForm.controls['password'].pristine || loginForm.controls['password'].valid" style="color: red;">password Required</span>
         </mat-card-content>
-        <button mat-raised-button color="accent" class="btn-block">Log in</button>
+        <button mat-raised-button color="accent" style="left: 40%;">Login</button>
+        <mat-card-subtitle class="example-form1" routerLink="/register" style="  width: fit-content;"><a >No account ?</a></mat-card-subtitle>
+        <mat-card-subtitle class="example-form1" routerLink="/forgot" style="  width: fit-content;"><a >Forgot Password ?</a></mat-card-subtitle>
       </form>
 </mat-card>
 </div>
