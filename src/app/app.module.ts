@@ -53,6 +53,11 @@ import{ModalModule} from "ngx-bootstrap/modal";
 import {CollapseModule} from "ngx-bootstrap/collapse";
 //fire 
 import{AngularFireModule} from '@angular/fire/compat';
+import { UserManagementComponent } from './main/home/user-management/user-management.component';
+import { ExpenseTrackerComponent } from './main/home/expense-tracker/expense-tracker.component';
+import { NotePadComponent } from './main/home/note-pad/note-pad.component';
+import { ForgetPasswordComponent } from './main/login/forget-password/forget-password.component';
+import { EmailVerifyComponent } from './main/login/email-verify/email-verify.component';
 const firebaseConfig = {
   apiKey: "AIzaSyAbpmIx-u6CvplfKq2MBcSFtBMMpQGLz-c",
   authDomain: "user-management-system-5fea7.firebaseapp.com",
@@ -68,7 +73,12 @@ const firebaseConfig = {
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    UserManagementComponent,
+    ExpenseTrackerComponent,
+    NotePadComponent,
+    ForgetPasswordComponent,
+    EmailVerifyComponent
   ],
   imports: [
     BrowserModule,
