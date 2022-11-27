@@ -1,6 +1,13 @@
 # Features
  Forget password , firebase, email verification, auth service 
 # Project
+#images 
+![image](https://user-images.githubusercontent.com/93726807/204135872-b27d8804-5373-4ca3-a267-85a5d0f6cb24.png)
+#firebase
+![image](https://user-images.githubusercontent.com/93726807/204135889-0eee1072-e37f-44bd-8e7c-1a040fccf6aa.png)
+#dashboard
+![image](https://user-images.githubusercontent.com/93726807/204135919-3e846914-c9c6-4bd3-95cf-e27e9f560f28.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
