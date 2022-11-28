@@ -1,13 +1,15 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import{AngularFireAuth} from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { EmailVerifyComponent } from '../main/login/email-verify/email-verify.component';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   @Output() getLogged: EventEmitter<any> = new EventEmitter();
 
-  constructor(private fireauth : AngularFireAuth,private router : Router) { 
+  constructor(private fireauth : AngularFireAuth,private router : Router,private dialog : MatDialog ) { 
   }
 //login component auth
   login(email: string, password : string){
@@ -19,7 +21,8 @@ export class AuthService {
         this.router.navigate(['/home']);
       }
       else{
-        this.router.navigate(['/verify-email'])
+        // this.router.navigate(['/verify-email'])
+        this.openDialog(res)
       }
     },
     err =>{
@@ -55,9 +58,10 @@ export class AuthService {
   }
   //forgot password
   forgotpassword(email:string){
-    this.fireauth.sendPasswordResetEmail(email).then(()=>{
-      this.router.navigate(['/verify-email'])
-      alert("Link has been Sent on your registered email")
+    this.fireauth.sendPasswordResetEmail(email).then((res:any)=>{
+      // this.router.navigate(['/verify-email'])
+      this.openDialog(res)
+      // alert("Link has been Sent on your registered email")
     },err =>{
       alert(err.message)
     })
@@ -65,9 +69,18 @@ export class AuthService {
   //forgot password
   emailVerification(user:any){
     user.sendEmailVerification().then((res:any) =>{
-   this.router.navigate(['/verify-email'])
+  //  this.router.navigate(['/verify-email'])
+  this.openDialog(res)
     },(err:any) =>{
       alert(err.message)
     })
+  }
+  openDialog(data:any): void {
+    console.log("data",data)
+    this.dialog.open(EmailVerifyComponent, {
+      height:'300px',
+      width: '300px',
+      data
+    });
   }
 }

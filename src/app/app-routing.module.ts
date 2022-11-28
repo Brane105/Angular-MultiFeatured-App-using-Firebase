@@ -8,7 +8,7 @@ import { EmailVerifyComponent } from './main/login/email-verify/email-verify.com
 import { ForgetPasswordComponent } from './main/login/forget-password/forget-password.component';
 import { LoginComponent } from './main/login/login.component';
 import { RegisterComponent } from './main/register/register.component';
-
+import { AuthenticationGuard as AuthGuard } from './shared/authentication.guard';
 const routes: Routes = [
   {path:"",redirectTo:"/login",pathMatch:"full"},
   {path:"login",component:LoginComponent},
@@ -23,6 +23,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],providers :  [AuthGuard]
 })
 export class AppRoutingModule { }
